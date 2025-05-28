@@ -1,12 +1,12 @@
+
+
 import { getMealById } from '@/utils/api'
 import Image from 'next/image'
 
-interface Params {
-  params: { id: string }
-}
+export default async function RecipePage(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params
+  const id = params.id
 
-export default async function RecipePage(props: Params) {
-  const id = props.params.id
   const data = await getMealById(id)
   const meal = data.meals ? data.meals[0] : null
 
