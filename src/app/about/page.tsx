@@ -6,13 +6,13 @@ export default function AboutPage() {
       <h1 className="text-4xl font-bold mb-6 text-center"> À propos de MealMaster</h1>
 
       <p className="text-gray-700 mb-6 text-lg text-center">
-        MealMaster est bien plus qu'une simple application de recettes. C’est une plateforme pensée pour les passionnés de cuisine, les curieux des saveurs du monde, et tous ceux qui aiment bien manger.
+        MealMaster est bien plus qu&apos;une simple application de recettes. C&apos;est une plateforme pensée pour les passionnés de cuisine, les curieux des saveurs du monde, et tous ceux qui aiment bien manger.
       </p>
 
       <section className="mb-8">
         <h2 className="text-2xl font-semibold mb-2 text-green-700">🌍 Une inspiration culinaire sans frontières</h2>
         <p className="text-gray-700">
-          Que vous soyez amateur de cuisine italienne, fan de plats épicés d’Asie, ou à la recherche de recettes végétariennes originales,
+          Que vous soyez amateur de cuisine italienne, fan de plats épicés d&apos;Asie, ou à la recherche de recettes végétariennes originales,
           MealMaster vous offre une bibliothèque variée et internationale. Chaque recette est soigneusement sélectionnée pour sa qualité,
           sa simplicité et son authenticité.
         </p>
@@ -47,3 +47,4 @@ export default function AboutPage() {
     </div>
   )
 }
+

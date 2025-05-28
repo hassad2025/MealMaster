@@ -14,6 +14,12 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 
+interface User {
+  email: string
+  password: string
+  [key: string]: unknown
+}
+
 export default function LoginForm({
   className,
   ...props
@@ -26,15 +32,15 @@ export default function LoginForm({
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
 
-    const storedUsers = JSON.parse(localStorage.getItem("users") || "[]")
+    const storedUsers = JSON.parse(localStorage.getItem("users") || "[]") as User[]
 
     const user = storedUsers.find(
-      (u: any) => u.email === email && u.password === password
+      (u) => u.email === email && u.password === password
     )
 
     if (user) {
       localStorage.setItem("isAuthenticated", "true")
-      router.push("/dashboard") // Redirection vers une page protégée
+      router.push("/dashboard")
     } else {
       setError("Email ou mot de passe incorrect.")
     }
@@ -59,7 +65,9 @@ export default function LoginForm({
                   type="email"
                   placeholder="exemple@email.com"
                   value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setEmail(e.target.value)
+                  }
                   required
                 />
               </div>
@@ -69,7 +77,9 @@ export default function LoginForm({
                   id="password"
                   type="password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                    setPassword(e.target.value)
+                  }
                   required
                 />
               </div>
@@ -88,3 +98,4 @@ export default function LoginForm({
     </div>
   )
 }
+

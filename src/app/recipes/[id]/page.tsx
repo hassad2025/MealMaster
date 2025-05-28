@@ -5,8 +5,8 @@ interface Params {
   params: { id: string }
 }
 
-export default async function RecipePage({ params }: Params) {
-  const { id } = params
+export default async function RecipePage(props: Params) {
+  const id = props.params.id
   const data = await getMealById(id)
   const meal = data.meals ? data.meals[0] : null
 
